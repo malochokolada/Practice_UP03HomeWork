@@ -10,12 +10,16 @@
         Background="#705f46"
         FontFamily="Times New Roman">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="279*"/>
+            <ColumnDefinition Width="521*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -23,35 +27,32 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <Button
-            Grid.Row="0" Name="btnAddNewInfo"
+        <Button Name="btnAddNewInfo"
             Click="btnAddNewInfo_Click"
             Content="Добавить новую информацию"
-            Margin="0,0,10,10"
+            Margin="331,0,0,0"
             Width="180"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Bottom"
-             Background="#b5aa84"/>
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+             Background="#b5aa84" Grid.Column="1"/>
 
-        <Button
-            Grid.Row="0"  Name="btnEditInfo"
+        <Button  Name="btnEditInfo"
             Click="btnEditInfo_Click"
             Content="Изменить информацию"
-            Margin="190,0,0,10"
+            Margin="126,0,0,0"
             Width="180"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Bottom"
-            Background="#b5aa84"/>
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            Background="#b5aa84" Grid.Column="1"/>
 
-        <Button
-            Grid.Row="0"  Name="btnDeleteInfo"
+        <Button  Name="btnDeleteInfo"
             Click="btnDeleteInfo_Click"
             Content="Удалить информацию"
-            Margin="0,0,190,10"
+            Margin="230,0,0,0"
             Width="150"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Bottom"
-             Background="#b5aa84"/>
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+             Background="#b5aa84" Grid.ColumnSpan="2"/>
 
         <DataGrid
             IsReadOnly="True"
@@ -59,7 +60,7 @@
             ItemsSource="{Binding Paint}"
             Grid.Row="1"
             Margin="10,10,10,35"
-             Background="#9c8e80">
+             Background="#9c8e80" Grid.ColumnSpan="2">
             <DataGrid.Columns >
                 <DataGridTextColumn
                     Header="Название картины"
@@ -77,7 +78,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        
+
 
     </Grid>
 </Window>
