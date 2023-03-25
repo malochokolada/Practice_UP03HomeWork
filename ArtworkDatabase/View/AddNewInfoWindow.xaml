@@ -1,0 +1,81 @@
+﻿<Window x:Class="ArtworkDatabase.View.AddNewInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArtworkDatabase.View"
+        mc:Ignorable="d"
+        Title="Картинная галерея: добавление информации" Height="350" Width="400"
+        FontFamily="Times New Roman"
+        Background="#57422b">
+    <Grid
+        VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
+            <RowDefinition
+                Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Margin="10"
+            Grid.Row="0">
+            <Label
+                Content="Название картины" Foreground="DarkKhaki" />
+            <TextBox
+                Text="{Binding PaintigTitle}" />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="1"
+            Margin="10">
+            <Label
+                Content="Год" Foreground="DarkKhaki" />
+            <TextBox
+                Text="{Binding Years}" />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="2"
+            Margin="10">
+            <Label
+                Content="Художник" Foreground="DarkKhaki"/>
+            <TextBox
+                Text="{Binding ArtistName}" />
+        </StackPanel>
+
+        <StackPanel
+            Grid.Row="3"
+            Margin="10">
+            <Label
+                Content="Направление" Foreground="DarkKhaki"/>
+            <TextBox
+                Text="{Binding Direction}" />
+        </StackPanel>
+
+        <Button
+            Content="Создать"
+            Name="btnCreate"
+            Click="btnCreate_Click"
+            Grid.Row="7"
+            Width="180"
+            Margin="0,0,0,0"
+            Background="#b5aa84"/>
+
+
+
+    </Grid>
+</Window>

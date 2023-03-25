@@ -13,10 +13,10 @@ namespace ArtworkDatabase.DbEntity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ArtGalleryWorkersEntities : DbContext
+    public partial class Art_GalleryEntities : DbContext
     {
-        public ArtGalleryWorkersEntities()
-            : base("name=ArtGalleryWorkersEntities")
+        public Art_GalleryEntities()
+            : base("name=Art_GalleryEntities")
         {
         }
     
@@ -25,7 +25,7 @@ namespace ArtworkDatabase.DbEntity
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Paint> Paint { get; set; }
         public virtual DbSet<User> User { get; set; }
-        public virtual DbSet<UserInfo> UserInfo { get; set; }
     }
 }

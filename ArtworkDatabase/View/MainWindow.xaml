@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
-        Title="Картинная галерея: Авторизация" Height="450" Width="400">
+        Title="Картинная галерея: Авторизация" Height="450" Width="400"
+        Background="#705f46">
     <Grid>
 
         <Grid.RowDefinitions>
@@ -22,7 +23,7 @@
         <Label
             FontSize="32"
             FontFamily="Times New Roman"
-            Foreground="DarkGoldenrod"
+            Foreground="#3d361d"
             VerticalAlignment="Center"
             HorizontalAlignment="Center"
             Content="Картинная галерея"/>
@@ -58,7 +59,8 @@
             Width="90"
             Content="{Binding BtnDesc}"
             Margin="0,10,10,0"
-            HorizontalAlignment="Right"/>
+            HorizontalAlignment="Right" VerticalAlignment="Top"
+            Background="#b5aa84"/>
         
 
     </Grid>

@@ -12,20 +12,12 @@ namespace ArtworkDatabase.DbEntity
     using System;
     using System.Collections.Generic;
     
-    public partial class UserInfo
+    public partial class Paint
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UserInfo()
-        {
-            this.User = new HashSet<User>();
-        }
-    
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public Nullable<int> Age { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<User> User { get; set; }
+        public int ID { get; set; }
+        public string PaintingTitle { get; set; }
+        public Nullable<System.DateTime> Years { get; set; }
+        public string ArtistName { get; set; }
+        public string Direction { get; set; }
     }
 }

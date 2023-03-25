@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ArtworkDatabase.DbEntity;
+using ArtworkDatabase.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
 
 namespace ArtworkDatabase.View
 {
@@ -19,13 +22,37 @@ namespace ArtworkDatabase.View
     /// </summary>
     public partial class ApplicationWindow : Window
     {
-        
-        public ApplicationWindow(DbEntity.User  user)
+       
+
+        public ApplicationWindow(Paint paint)
         {
             InitializeComponent();
 
-            DataContext = new ViewModel.AppVM(user);
+            this.DataContext = new AppVM(paint);
         }
 
+        
+
+        public void RefreshData()
+        {
+            (DataContext as AppVM).LoadData();
+        }
+
+        private void btnAddNewInfo_Click(object sender, RoutedEventArgs e)
+        {
+            var addNewUser = new AddNewInfoWindow();
+            addNewUser.Show();
+        }
+
+        private void btnEditInfo_Click(object sender, RoutedEventArgs e)
+        {
+            var editInfoWindow = new AddNewInfoWindow((DataContext as AppVM).SelectedPaint);
+            editInfoWindow.Show();
+        }
+
+        private void btnDeleteInfo_Click(object sender, RoutedEventArgs e)
+        {
+            (DataContext as AppVM).DeleteSelectedInfo();
+        }
     }
 }

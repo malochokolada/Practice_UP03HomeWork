@@ -18,8 +18,5 @@ namespace ArtworkDatabase.DbEntity
         public string Login { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public Nullable<int> InfoId { get; set; }
-    
-        public virtual UserInfo UserInfo { get; set; }
     }
 }

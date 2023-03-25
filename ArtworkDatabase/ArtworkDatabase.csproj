@@ -16,14 +16,15 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>.\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>On</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,6 +65,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AddNewInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ApplicationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -76,31 +81,34 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DbEntity\ArtGalleryDB.Context.cs">
+    <Compile Include="DbEntity\ArtGallery.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ArtGalleryDB.Context.tt</DependentUpon>
+      <DependentUpon>ArtGallery.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbEntity\ArtGalleryDB.cs">
+    <Compile Include="DbEntity\ArtGallery.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ArtGalleryDB.tt</DependentUpon>
+      <DependentUpon>ArtGallery.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbEntity\ArtGalleryDB.Designer.cs">
+    <Compile Include="DbEntity\ArtGallery.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ArtGalleryDB.edmx</DependentUpon>
+      <DependentUpon>ArtGallery.edmx</DependentUpon>
     </Compile>
     <Compile Include="DbEntity\DbStorage.cs" />
-    <Compile Include="DbEntity\User.cs">
-      <DependentUpon>ArtGalleryDB.tt</DependentUpon>
+    <Compile Include="DbEntity\Paint.cs">
+      <DependentUpon>ArtGallery.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbEntity\UserInfo.cs">
-      <DependentUpon>ArtGalleryDB.tt</DependentUpon>
+    <Compile Include="DbEntity\User.cs">
+      <DependentUpon>ArtGallery.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AppVM.cs" />
     <Compile Include="ViewModel\AuthVM.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
+    <Compile Include="View\AddNewInfoWindow.xaml.cs">
+      <DependentUpon>AddNewInfoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ApplicationWindow.xaml.cs">
       <DependentUpon>ApplicationWindow.xaml</DependentUpon>
     </Compile>
@@ -127,12 +135,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DbEntity\ArtGalleryDB.edmx">
+    <EntityDeploy Include="DbEntity\ArtGallery.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ArtGalleryDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>ArtGallery.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DbEntity\ArtGalleryDB.edmx.diagram">
-      <DependentUpon>ArtGalleryDB.edmx</DependentUpon>
+    <None Include="DbEntity\ArtGallery.edmx.diagram">
+      <DependentUpon>ArtGallery.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -143,17 +151,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="DbEntity\ArtGalleryDB.Context.tt">
+    <Content Include="DbEntity\ArtGallery.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ArtGalleryDB.Context.cs</LastGenOutput>
-      <DependentUpon>ArtGalleryDB.edmx</DependentUpon>
+      <DependentUpon>ArtGallery.edmx</DependentUpon>
+      <LastGenOutput>ArtGallery.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DbEntity\ArtGalleryDB.tt">
+    <Content Include="DbEntity\ArtGallery.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ArtGalleryDB.edmx</DependentUpon>
-      <LastGenOutput>ArtGalleryDB.cs</LastGenOutput>
+      <DependentUpon>ArtGallery.edmx</DependentUpon>
+      <LastGenOutput>ArtGallery.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

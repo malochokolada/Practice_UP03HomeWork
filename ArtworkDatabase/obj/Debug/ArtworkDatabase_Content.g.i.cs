@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbentity/artgallerydb.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbentity/artgallerydb.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbentity/artgallery.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("dbentity/artgallery.tt")]
 
 

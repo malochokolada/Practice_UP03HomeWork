@@ -8,7 +8,7 @@ namespace ArtworkDatabase.DbEntity
 {
     public static class DbStorage
     {
-        public static ArtGalleryWorkersEntities DB_s { get; set; } = new ArtGalleryWorkersEntities();
+        public static Art_GalleryEntities DB_s { get; set; } = new Art_GalleryEntities();
     }
 
 }

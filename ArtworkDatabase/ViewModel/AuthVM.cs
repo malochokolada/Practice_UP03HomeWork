@@ -11,7 +11,7 @@ namespace ArtworkDatabase.ViewModel
 {
     public class AuthVM : BaseVM
     {
-        private string _buttonDesc = "Войти";
+        private string _buttonSingIn = "Войти";
 
         private User _user;
         private string _login;
@@ -39,13 +39,13 @@ namespace ArtworkDatabase.ViewModel
         }
 
 
-        public string BtnDesc
+        public string ButtonSingIn
         {
-            get => _buttonDesc;
+            get => _buttonSingIn;
             set
             {
-                _buttonDesc = value;
-                OnPropertyChanged(nameof(BtnDesc));
+                _buttonSingIn = value;
+                OnPropertyChanged(nameof(ButtonSingIn));
             }
         }
 
@@ -54,8 +54,8 @@ namespace ArtworkDatabase.ViewModel
         {
             try
             {
-                var result = await DbStorage.DB_s.User.FirstOrDefaultAsync(user => user.Login == login &&
-                            user.Password == password);
+                var result = await DbStorage.DB_s.User.FirstOrDefaultAsync(_user => _user.Login == login &&
+                            _user.Password == password);
 
                 _user = result;
 
@@ -79,11 +79,11 @@ namespace ArtworkDatabase.ViewModel
 
         public async void AuthInApp()
         {
-            BtnDesc = "Подождите...";
+            ButtonSingIn = "Подождите...";
 
             if (await Authorize(Login, Password))
             {
-                var appWindow = new View.ApplicationWindow(_user);
+                var appWindow = new View.ApplicationWindow(_user);//_user??
 
                 appWindow.Show();
 
@@ -94,16 +94,14 @@ namespace ArtworkDatabase.ViewModel
                         (item as Window)?.Hide();
                     }
                 }
-
-                BtnDesc = "Войти";
-
                 return;
             }
 
             MessageBox.Show("Неверный логин или пароль", "Авторизация",
                     MessageBoxButton.OK, MessageBoxImage.Error);
 
-            BtnDesc = "Войти";
+            ButtonSingIn = "Войти";
+
         }
     }
 }
